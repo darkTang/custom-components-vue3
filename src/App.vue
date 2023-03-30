@@ -9,7 +9,13 @@
       on-color="pink"
       :active-icon="Check"
       :inactive-icon="Close"
-    /> -->
+    />-->
+
+    <!-- <coco-skeleton width="400px" style="margin: 10px" animated /> -->
+    <coco-skeleton width="400px" style="margin: 10px" animated />
+    <coco-skeleton width="400px" style="margin: 10px" animated />
+    <coco-skeleton width="400px" style="margin: 10px" animated />
+    <!-- <el-skeleton animated /> -->
   </div>
 </template>
 
@@ -17,9 +23,8 @@
 import { Delete, Edit, Search, Share, Upload, Plus, Check, Close } from '@element-plus/icons-vue'
 import CocoButton from '@/components/coco-button.vue'
 import CocoSwitch from '@/components/coco-switch.vue'
+import CocoSkeleton from '@/components/coco-skeleton.vue'
 import { ref } from 'vue'
-
-let flag = ref(false)
 </script>
 <style scoped>
 div {
