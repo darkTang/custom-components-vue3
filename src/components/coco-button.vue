@@ -27,8 +27,9 @@ const props = defineProps({
     default: false,
   },
 })
-const buttonDynamicClass = reactive([{ primary: props.type === 'primary' }, { warning: props.type === 'warning' }, { danger: props.type === 'danger' }, { info: props.type === 'info' }])
+const buttonDynamicClass = reactive([{ primary: props.type === 'primary' }, { success: props.type === 'success' }, { warning: props.type === 'warning' }, { danger: props.type === 'danger' }, { info: props.type === 'info' }])
 const spanDynamicClass = reactive([{ small: props.size === 'small' }, { large: props.size === 'large' }])
+
 </script>
 
 <style lang="less" scoped>
@@ -94,6 +95,21 @@ const spanDynamicClass = reactive([{ small: props.size === 'small' }, { large: p
       cursor: not-allowed;
       background-color: #79bbff;
       border: 1px solid #79bbff;
+    }
+  }
+  &.success {
+    background-color: @successColor;
+    border: 1px solid @successColor;
+    color: #fff;
+    &:hover {
+      background-color: #95d475;
+      border: 1px solid #95d475;
+      color: #fff;
+    }
+    &[disabled] {
+      cursor: not-allowed;
+      background-color: #95d475;
+      border: 1px solid #95d475;
     }
   }
   &.warning {
