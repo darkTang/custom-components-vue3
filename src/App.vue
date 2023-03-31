@@ -12,10 +12,11 @@
     />-->
 
     <!-- <coco-skeleton width="400px" style="margin: 10px" animated /> -->
+    <!-- <coco-skeleton width="400px" style="margin: 10px" animated />
     <coco-skeleton width="400px" style="margin: 10px" animated />
-    <coco-skeleton width="400px" style="margin: 10px" animated />
-    <coco-skeleton width="400px" style="margin: 10px" animated />
+    <coco-skeleton width="200px" height="200px" style="margin: 10px" circle animated />-->
     <!-- <el-skeleton animated /> -->
+    <coco-calendar :have-month="true" lang="zh" />
   </div>
 </template>
 
@@ -24,6 +25,7 @@ import { Delete, Edit, Search, Share, Upload, Plus, Check, Close } from '@elemen
 import CocoButton from '@/components/coco-button.vue'
 import CocoSwitch from '@/components/coco-switch.vue'
 import CocoSkeleton from '@/components/coco-skeleton.vue'
+import CocoCalendar from '@/components/coco-calendar.vue'
 import { ref } from 'vue'
 </script>
 <style scoped>
