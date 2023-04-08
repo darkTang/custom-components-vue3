@@ -6,17 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    div {
-      width: fit-content;
-      margin: auto;
-      background: pink;
+    input:checked + label {
+      color: red;
     }
   </style>
 </head>
 <body>
-  <div>
-    123
-  </div>
-  <span>1223</span>
+  <input type="checkbox" style="display: none" id="on">
+  <label for="on">123</label>
+  <script type="text/javascript">
+    console.log(document.querySelector('input'));
+  </script>
 </body>
 </html>

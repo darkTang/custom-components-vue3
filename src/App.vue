@@ -21,9 +21,13 @@
       <coco-tree :data="data" @node-click="handleNodeClick" />
     </div>
 
-
-    
-    <el-tree :data="data" default-expand-all @node-click="handleNodeClick" />
+    <el-tree
+      :data="data"
+      show-checkbox
+      node-key="id"
+      :props="defaultProps"
+      @node-click="handleNodeClick"
+    />
   </div>
 </template>
 
@@ -34,25 +38,28 @@ import CocoSwitch from '@/components/coco-switch.vue'
 import CocoSkeleton from '@/components/coco-skeleton.vue'
 import CocoCalendar from '@/components/coco-calendar.vue'
 import CocoTree from '@/components/coco-tree.vue'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const data: Tree[] = [
   {
+    id: 1,
     label: 'Level one 1',
     children: [
       {
+        id: 4,
         label: 'Level two 1-1',
         children: [
           {
+            id: 9,
             label: 'Level three 1-1-1',
+          },
+          {
+            id: 10,
+            label: 'Level three 1-1-2',
             children: [
               {
-                label: 'Level four 1-1-1-1',
-                children: [
-                  {
-                    label: 'Level five 1-1-1-1-1',
-                  },
-                ],
+                id: 11,
+                label: 'Level three 1-1-2-1',
               },
             ],
           },
@@ -61,44 +68,30 @@ const data: Tree[] = [
     ],
   },
   {
+    id: 2,
     label: 'Level one 2',
     children: [
       {
+        id: 5,
         label: 'Level two 2-1',
-        children: [
-          {
-            label: 'Level three 2-1-1',
-          },
-        ],
       },
       {
+        id: 6,
         label: 'Level two 2-2',
-        children: [
-          {
-            label: 'Level three 2-2-1',
-          },
-        ],
       },
     ],
   },
   {
+    id: 3,
     label: 'Level one 3',
     children: [
       {
+        id: 7,
         label: 'Level two 3-1',
-        children: [
-          {
-            label: 'Level three 3-1-1',
-          },
-        ],
       },
       {
+        id: 8,
         label: 'Level two 3-2',
-        children: [
-          {
-            label: 'Level three 3-2-1',
-          },
-        ],
       },
     ],
   },
@@ -110,10 +103,8 @@ const defaultProps = {
 }
 
 const handleNodeClick = data => {
-  // console.log(data)
+  console.log(data)
 }
-
-defineExpose({ handleNodeClick })
 </script>
 <style scoped>
 div {
